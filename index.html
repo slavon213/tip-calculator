@@ -25,13 +25,21 @@
                             <input type="number" name="custom-tip" id="custom-tip" placeholder="Custom" />
                         </div>
                         <div>
-                            <label for="">Number of People</label>
+                            <label for="people-number">Number of People</label>
                             <input type="number" name="people-number" id="people-number" />
                         </div>
                     </div>
                     <div class="half display">
-                        <div>Tip Amount / person</div>
-                        <div>Total / person</div>
+                        <div class="tip">
+                            <p>Tip Amount</p>
+                            <p class="delimiter">/ person</p>
+                            <p class="total-numbers" id="tip-amount"></p>
+                        </div>
+                        <div class="tip">
+                            <p>Total</p>
+                            <p class="delimiter">/ person</p>
+                            <p class="total-numbers" id="total-bill"></p>
+                        </div>
                         <button type="submit">Reset</button>
                     </div>
                 </form>
