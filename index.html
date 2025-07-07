@@ -1,47 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  <div class="container">
-    <form action="" >
-      <div>
-        Bill
-        Select Tip %
-        5%
-        10%
-        15%
-        25%
-        50%
-        Custom
-        Number of People
-      </div>
-      <div>
-        Tip Amount
-        / person
-        Total
-        / person
-        Reset
-      </div>
-    </form>
-  </div>
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+        <title>Frontend Mentor | Tip calculator app</title>
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                <form>
+                    <div class="half calculator">
+                        <div>
+                            <label for="bill"></label>
+                            <input type="number" name="bill" id="bill" step="0.01" />
+                        </div>
+                        <div class="tip-buttons">
+                            <label for="custom-tip">Select Tip %</label>
+                            <button class="tip-amount">5%</button>
+                            <button class="tip-amount">10%</button>
+                            <button class="tip-amount">15%</button>
+                            <button class="tip-amount">25%</button>
+                            <button class="tip-amount">50%</button>
+                            <input type="number" name="custom-tip" id="custom-tip" placeholder="Custom" />
+                        </div>
+                        <div>
+                            <label for="">Number of People</label>
+                            <input type="number" name="people-number" id="people-number" />
+                        </div>
+                    </div>
+                    <div class="half display">
+                        <div>Tip Amount / person</div>
+                        <div>Total / person</div>
+                        <button type="submit">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </body>
 </html>
