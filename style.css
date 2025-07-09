@@ -1,0 +1,22 @@
+/* root */
+
+:root {
+    /* colors */
+
+    /* primary */
+    --color-active: #26c2ae;
+
+    /* neutral */
+    --color-background-main: #c5e4e7;
+    --color-background-second: #00474B;
+    --color-background-hover: #9FE8DF;
+    --color-input-fill: #F3F9FA;
+    --color-label-bill: #5e7a7d;
+    --color-text-custom: #547878;
+    --color-white: #ffffff;
+    --color-almost-white: #f4fafa;
+    --color-invalid: #E17052;
+    --color-devider: #7F9D9F;
+
+    /* --very-dark-cyan: #00494d; */
+}
