@@ -26,8 +26,14 @@
 
     --text-size-small: 13px;
     --text-size-regular: 16px;
+    --text-size-middle: 20px;
     --text-size-big: 24px;
     --text-size-large: 48px;
+
+    /* radius */
+    --radius-5: 5px;
+    --radius-15: 15px;
+    --radius-25: 25px;
 }
 
 *,
@@ -41,8 +47,107 @@
 html,
 body {
     height: 100vh;
+}
+
+body {
+    display: grid;
+    place-content: center;
+    background: var(--color-background-main);
     font-family: "Space Mono", monospace;
     font-weight: 700;
     font-style: normal;
     font-size: var(--text-size-regular);
+    color: var(--color-background-second);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="number"] {
+    display: block;
+    width: 100%;
+    height: 48px;
+    font-family: inherit;
+    font-weight: inherit;
+    color: inherit;
+    font-size: var(--text-size-big);
+    background-color: var(--color-input-fill);
+    border-radius: var(--radius-5);
+    padding-block: 6px;
+    padding-inline: 17px;
+    text-align: end;
+    border: none;
+    outline: none;
+}
+
+button {
+    border: none;
+    outline: none;
+    background-color: var(--color-background-second);
+    border-radius: var(--radius-5);
+    color: var(--color-white);
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: var(--text-size-big);
+    cursor: pointer;
+}
+
+form {
+    width: 920px;
+    /* height: 481px; */
+    background-color: var(--color-white);
+    border-radius: var(--radius-25);
+    /* padding: 32px; */
+    padding: 32px;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.half {
+    display: flex;
+    flex-direction: column;
+    /* flex-basis: 50%; */
+    width: 100%;
+    height: 100%;
+    /* padding: 40px; */
+    padding: 16px;
+    border-radius: var(--radius-15);
+}
+
+.display {
+    background-color: var(--color-background-second);
+}
+
+.calculator {
+    gap: 40px;
+
+    /* label {
+
+    } */
+}
+
+.tip-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 48px;
+    row-gap: 16px;
+    column-gap: 14px;
+}
+
+.buttons input[type="number"] {
+    text-align: center;
+    padding-inline: 14px;
 }

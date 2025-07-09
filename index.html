@@ -9,25 +9,27 @@
     </head>
     <body>
         <main>
-            <div class="container">
+            <!-- <div class="container"> -->
                 <form>
                     <div class="half calculator">
                         <div>
-                            <label for="bill"></label>
+                            <label for="bill">Bill</label>
                             <input type="number" name="bill" id="bill" step="0.01" />
                         </div>
                         <div class="tip-buttons">
                             <label for="custom-tip">Select Tip %</label>
-                            <button class="tip-amount">5%</button>
-                            <button class="tip-amount">10%</button>
-                            <button class="tip-amount">15%</button>
-                            <button class="tip-amount">25%</button>
-                            <button class="tip-amount">50%</button>
-                            <input type="number" name="custom-tip" id="custom-tip" placeholder="Custom" />
+                            <div class="buttons">
+                                <button class="tip-amount">5%</button>
+                                <button class="tip-amount">10%</button>
+                                <button class="tip-amount">15%</button>
+                                <button class="tip-amount">25%</button>
+                                <button class="tip-amount">50%</button>
+                                <input type="number" name="custom-tip" id="custom-tip" placeholder="Custom"/>
+                            </div>
                         </div>
                         <div>
                             <label for="people-number">Number of People</label>
-                            <input type="number" name="people-number" id="people-number" />
+                            <input type="number" name="people-number" id="people-number" min="1" step="1"/>
                         </div>
                     </div>
                     <div class="half display">
@@ -44,7 +46,7 @@
                         <button type="submit">Reset</button>
                     </div>
                 </form>
-            </div>
+            <!-- </div> -->
         </main>
     </body>
 </html>
