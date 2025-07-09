@@ -85,6 +85,7 @@ input[type="number"] {
     text-align: end;
     border: none;
     outline: none;
+    caret-color: inherit;
 }
 
 button {
@@ -129,9 +130,41 @@ form {
 .calculator {
     gap: 40px;
 
-    /* label {
+    label {
+        color: var(--color-label-bill);
+    }
+}
 
-    } */
+.with-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    input {
+        padding-inline-start: 30px;
+        /* padding-block: 16px; */
+    }
+    & > div {
+        position: relative;
+    }
+    & > div::before {
+        content: "";
+        display: inline-block;
+        width: 11px;
+        height: 17px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        left: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+.dollar::before {
+    background-image: url("./images/icon-dollar.svg");
+}
+.person::before {
+    background-image: url("./images/icon-person.svg");
 }
 
 .tip-buttons {
