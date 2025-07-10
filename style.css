@@ -106,7 +106,7 @@ button {
 
 form {
     width: 920px;
-    /* height: 481px; */
+    height: 481px;
     background-color: var(--color-white);
     border-radius: var(--radius-25);
     /* padding: 32px; */
@@ -128,10 +128,6 @@ form {
 
 .display {
     background-color: var(--color-background-second);
-
-    &>div:last-of-type {
-        margin-block-end: 40px;
-    }
 }
 
 .calculator {
@@ -214,4 +210,8 @@ form {
 
 .reset {
     margin-block-start: auto;
+    background-color: var(--color-active);
+    height: 48px;
+    color: var(--color-background-second);
+    text-transform: uppercase;
 }
