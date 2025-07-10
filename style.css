@@ -19,6 +19,7 @@
     --color-almost-white: #f4fafa;
     --color-invalid: #e17052;
     --color-delimiter: #7f9d9f;
+    --color-button-disabled: #0D686D;
 
     /* --very-dark-cyan: #00494d; */
 
@@ -83,12 +84,22 @@ input[type="number"] {
     padding-block: 6px;
     padding-inline: 17px;
     text-align: end;
-    border: none;
+    border: 2px solid transparent;
     outline: none;
     caret-color: inherit;
+    transition: border-color 0.3s ease;
 
     &::placeholder {
         color: var(--color-text-custom);
+    }
+
+    &:hover {
+        transition: border-color 0.1s ease;
+        border-color: var(--color-active);
+    }
+
+    &:focus {
+        border-color: var(--color-active);
     }
 }
 
@@ -102,6 +113,13 @@ button {
     font-weight: inherit;
     font-size: var(--text-size-big);
     cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        transition: background-color 0.1s ease;
+        background-color: var(--color-background-hover);
+        color: var(--color-background-second);
+    }
 }
 
 form {
@@ -168,6 +186,10 @@ form {
         top: 50%;
         transform: translateY(-50%);
     }
+
+    &:invalid {
+        border-color: var(--color-invalid);
+    }
 }
 .dollar::before {
     background-image: url("./images/icon-dollar.svg");
@@ -218,6 +240,16 @@ form {
     margin-block-start: auto;
     background-color: var(--color-active);
     height: 48px;
+    font-size: var(--text-size-middle);
     color: var(--color-background-second);
     text-transform: uppercase;
 }
+
+.active {
+    background-color: var(--color-active);
+    color: var(--color-background-second);
+}
+/* 
+.disabled {
+    background-color: var(--color-button-disabled);
+} */
