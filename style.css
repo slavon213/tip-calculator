@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-
 :root {
     /* colors */
 
@@ -17,7 +16,6 @@
     --color-invalid: #e17052;
     --color-delimiter: #7f9d9f;
     --color-button-disabled: #0d686d;
-
 
     /* text-size */
 
@@ -43,18 +41,25 @@
 
 html,
 body {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 body {
     display: grid;
     place-content: center;
+    justify-items: center;
+    gap: 87px;
     background: var(--color-background-main);
     font-family: "Space Mono", monospace;
     font-weight: 700;
     font-style: normal;
     font-size: var(--text-size-regular);
     color: var(--color-background-second);
+    margin-block-start: 50px;
+}
+
+img {
+    display: block;
 }
 
 input::-webkit-outer-spin-button,
@@ -256,6 +261,10 @@ form {
 @media (max-width: 925px) {
     :root {
         --text-size-large: 32px;
+    }
+
+    body {
+        gap: 40px;
     }
     form {
         flex-direction: column;
