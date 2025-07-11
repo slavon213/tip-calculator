@@ -135,6 +135,18 @@ form {
     align-items: flex-start;
 }
 
+small {
+    font-family: inherit;
+    font-size: inherit;
+    color: var(--color-invalid);
+}
+
+.flx {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .half {
     display: flex;
     flex-direction: column;
