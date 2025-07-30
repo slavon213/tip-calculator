@@ -61,7 +61,7 @@ body {
 img {
     display: block;
 }
-
+/* 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -70,7 +70,7 @@ input::-webkit-inner-spin-button {
 
 input[type="number"] {
     -moz-appearance: textfield;
-}
+} */
 
 /* input[type="number"] { */
 input {
@@ -136,11 +136,6 @@ form {
     align-items: flex-start;
 }
 
-small {
-    font-family: inherit;
-    font-size: inherit;
-    color: var(--color-invalid);
-}
 
 .flx {
     display: flex;
