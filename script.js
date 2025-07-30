@@ -2,6 +2,14 @@ const bill = document.getElementById("bill");
 const customTip = document.getElementById("custom-tip");
 const numberOfPeople = document.getElementById("people-number");
 const resetButton = document.getElementById("reset");
+const tipButtons = document.querySelectorAll(".tip-amount");
+
+
+function removeClassActive(listButtons){
+    listButtons.forEach(button => {
+        button.classList.remove("active");
+    })
+}
 
 function decimalInput(value) {
     value = value.replace(/[^\d.]+/g, "");
@@ -65,4 +73,13 @@ customTip.addEventListener("input", function () {
 
 numberOfPeople.addEventListener("input", function(){
     this.value = integerInput(this.value);
+})
+
+
+tipButtons.forEach(button => {
+        button.addEventListener("click", (event)=> {
+        removeClassActive(tipButtons);
+        button.classList.add("active");
+        
+    })
 })
