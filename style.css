@@ -237,8 +237,9 @@ small {
     column-gap: 14px;
 }
 
-.buttons input[type="number"] {
+.buttons input {
     padding-inline: 8px;
+    text-align: center;
 
     &::placeholder {
         text-align: center;
