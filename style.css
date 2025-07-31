@@ -274,10 +274,14 @@ small {
     background-color: var(--color-active);
     color: var(--color-background-second);
 }
-/* 
+
 .disabled {
     background-color: var(--color-button-disabled);
-} */
+    &:hover {
+        background-color: var(--color-button-disabled);
+        cursor: auto;
+    }
+}
 
 @media (max-width: 925px) {
     :root {

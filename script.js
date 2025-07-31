@@ -12,6 +12,11 @@ form.addEventListener("submit", (e) => {
     process();
 });
 
+resetButton.addEventListener("click", function () {
+    showNumbers();
+    this.classList.add("disabled");
+});
+
 function process() {
     const billIsValid = validationNonZero(bill);
     const numberPeopleIsValid = validationNonZero(numberOfPeople);
@@ -19,10 +24,11 @@ function process() {
     if (billIsValid && numberPeopleIsValid) {
         const [tipPerPerson, totalPerPerson] = calculate();
         showNumbers(tipPerPerson, totalPerPerson);
+        resetButton.classList.remove("disabled");
     }
 }
 
-function showNumbers(tip = 0.0, total = 0.0) {
+function showNumbers(tip = "0.00", total = "0.00") {
     displayTipPerPerson.textContent = tip;
     displayTotalPerPerson.textContent = total;
 }
