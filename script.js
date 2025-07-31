@@ -4,21 +4,28 @@ const customTip = document.getElementById("custom-tip");
 const numberOfPeople = document.getElementById("people-number");
 const resetButton = document.getElementById("reset");
 const tipButtons = document.querySelectorAll(".tip-amount");
+const displayTipPerPerson = document.querySelector("#tip-amount > span");
+const displayTotalPerPerson = document.querySelector("#total-bill > span");
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
+    process();
+});
 
+function process() {
     const billIsValid = validationNonZero(bill);
     const numberPeopleIsValid = validationNonZero(numberOfPeople);
 
     if (billIsValid && numberPeopleIsValid) {
-        const [tipPerPErson, totalPerPerson] =  calculate();
-        console.log(tipPerPErson);
-        console.log(totalPerPerson);
-        
-        
+        const [tipPerPerson, totalPerPerson] = calculate();
+        showNumbers(tipPerPerson, totalPerPerson);
     }
-});
+}
+
+function showNumbers(tip = 0.0, total = 0.0) {
+    displayTipPerPerson.textContent = tip;
+    displayTotalPerPerson.textContent = total;
+}
 
 function removeClassActive(listButtons) {
     listButtons.forEach((button) => {
@@ -86,21 +93,25 @@ function showErrorMessage(element, message = "") {
 
 bill.addEventListener("input", function () {
     this.value = decimalInput(this.value);
+    process();
 });
 
 customTip.addEventListener("input", function () {
     this.value = decimalInput(this.value);
+    process();
 });
 
 numberOfPeople.addEventListener("input", function () {
     this.value = integerInput(this.value);
+    process();
 });
 
 tipButtons.forEach((button) => {
     button.addEventListener("click", () => {
         removeClassActive(tipButtons);
         button.classList.add("active");
-        customTip.value = '';
+        customTip.value = "";
+        process();
     });
 });
 
@@ -110,8 +121,8 @@ function calculate() {
     const peopleNumber = parseInt(numberOfPeople.value);
 
     const totalSumWithTip = billNumber + (billNumber * tip) / 100;
-    const tipPerPerson = parseFloat((tip / peopleNumber).toFixed(2));
-    const totalPerPerson = parseFloat((totalSumWithTip / peopleNumber).toFixed(2));
+    const tipPerPerson = (tip / peopleNumber).toFixed(2);
+    const totalPerPerson = (totalSumWithTip / peopleNumber).toFixed(2);
 
-    return [tipPerPerson, totalPerPerson]
+    return [tipPerPerson, totalPerPerson];
 }
