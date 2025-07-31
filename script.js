@@ -7,16 +7,18 @@ const tipButtons = document.querySelectorAll(".tip-amount");
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    
+
     const billIsValid = validationNonZero(bill);
     const numberPeopleIsValid = validationNonZero(numberOfPeople);
-    
+
     if (billIsValid && numberPeopleIsValid) {
-        // console.log("TRUE!");
-        calculate();
+        const [tipPerPErson, totalPerPerson] =  calculate();
+        console.log(tipPerPErson);
+        console.log(totalPerPerson);
+        
+        
     }
-    
-});;
+});
 
 function removeClassActive(listButtons) {
     listButtons.forEach((button) => {
@@ -78,7 +80,7 @@ function validationNonZero(element) {
     return true;
 }
 
-function showErrorMessage(element, message='') {
+function showErrorMessage(element, message = "") {
     element.textContent = message;
 }
 
@@ -98,27 +100,18 @@ tipButtons.forEach((button) => {
     button.addEventListener("click", () => {
         removeClassActive(tipButtons);
         button.classList.add("active");
+        customTip.value = '';
     });
 });
 
 function calculate() {
     const billNumber = parseFloat(bill.value);
-    console.log(`bill: ${billNumber}`);
-    
-    const tip = getTipPercent() / 100;
-    console.log(`percent: ${tip}`);
+    const tip = getTipPercent();
     const peopleNumber = parseInt(numberOfPeople.value);
-    console.log(`people: ${peopleNumber}`);
 
-    // billPerPerson = parseFloat((billNumber * 100 / peopleNumber).toFixed(2)/100);
-    // tipPerPerson = parseFloat(((billNumber * 100 * tip/peopleNumber)/100).toFixed(2));
-    // totalPerPerson = parseFloat((billPerPerson + tipPerPerson).toFixed(2));
-    
-    // console.log(billPerPerson);
-    // console.log(tipPerPerson);
-    // console.log(totalPerPerson);
-    
-    
-    
+    const totalSumWithTip = billNumber + (billNumber * tip) / 100;
+    const tipPerPerson = parseFloat((tip / peopleNumber).toFixed(2));
+    const totalPerPerson = parseFloat((totalSumWithTip / peopleNumber).toFixed(2));
 
+    return [tipPerPerson, totalPerPerson]
 }
