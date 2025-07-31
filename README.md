@@ -17,7 +17,7 @@
 
 ### Screenshot
 
-![](../design/desktop-design-completed.jpg)
+![](./design/desktop-design-completed.jpg)
 
 ### Links
 
