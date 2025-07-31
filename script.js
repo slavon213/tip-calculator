@@ -251,7 +251,7 @@ tipButtons.forEach((button) => {
 
 /**
  * Розраховує чайові та загальну суму на одну людину.
- * @returns {[string, string]} [tipPerPerson, totalPerPerson]
+ * @returns {string[]} [tipPerPerson, totalPerPerson]
  */
 function calculate() {
     const billNumber = parseFloat(bill.value);
