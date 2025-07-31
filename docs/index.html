@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1>Frontend Mentor - Tip calculator app solution</h1>
+<p>Це виконання домашнього завдання по <a href="https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX">Tip calculator app challenge on Frontend Mentor</a>.</p>
+<h2>Table of contents</h2>
+<ul>
+<li><a href="#frontend-mentor---tip-calculator-app-solution">Frontend Mentor - Tip calculator app solution</a>
+<ul>
+<li><a href="#table-of-contents">Table of contents</a>
+<ul>
+<li><a href="#screenshot">Screenshot</a></li>
+<li><a href="#links">Links</a></li>
+</ul>
+</li>
+<li><a href="#my-process">My process</a>
+<ul>
+<li><a href="#built-with">Built with</a></li>
+<li><a href="#what-i-learned">What I learned</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Screenshot</h3>
+<p><img src="../design/desktop-design-completed.jpg" alt=""></p>
+<h3>Links</h3>
+<ul>
+<li>Solution URL: <a href="https://your-solution-url.com">Add solution URL here</a></li>
+<li>Live Site URL: <a href="https://your-live-site-url.com">Add live site URL here</a></li>
+</ul>
+<h2>My process</h2>
+<p>Роботу почав з каркасу макету у Figma. Спочатку HTML, потім додав стилі і обробку подій Javascript</p>
+<h3>Built with</h3>
+<ul>
+<li>Semantic HTML5 markup</li>
+<li>CSS custom properties</li>
+<li>Flexbox</li>
+<li>CSS Grid</li>
+<li>JavaScript</li>
+<li>Regex</li>
+</ul>
+<h3>What I learned</h3>
+<p>В цій роботі дізнався про важливі деталі,  які виникають при обробці форм. А саме:</p>
+<ol>
+<li>Для того, щоб дозволити введення тільки цифр і деяких інших символів (наприклад, крапка) потрібне поле вводу <code>input type=&quot;text&quot;</code>, оскільки поле <code>input ttype=&quot;number&quot;</code> одразу після введення крапки робить <code>submit</code>  форми. Далі можна використовувати регулярні вирази. наприклад:</li>
+</ol>
+<pre class="prettyprint source lang-js"><code>    value = value.replace(/[^\d.]+/g, &quot;&quot;);
+</code></pre>
+<ol start="2">
+<li>Можна використовувати можливості кастомної валідації, наприклад, для зміни стилю:</li>
+</ol>
+<pre class="prettyprint source lang-css"><code>input:invalid {
+    border-color: var(--color-invalid);
+}
+</code></pre>
+<pre class="prettyprint source lang-js"><code>element.setCustomValidity(&quot;Can't be zero&quot;);
+</code></pre>
+<p>Повідомлення не відображається, але поле отримує псевдоклас <code>:invalid</code>. Стандартне для браузера повідомлення про помилку можна відобразити за допомогою метода <code>reportValidity(&quot;Повідомлення про помилку&quot;)</code>.</p>
+<ol start="3">
+<li>При виконанні роботи потрібно було очищати поля вводу форми. Це можна зробити стандартним методом форми <code>form.reset()</code>. Але несподівано виникла помилка, яка призводила до того, що форма не очищалась. В консолі відображалась помилка <code>form.reset() s not a function</code>. Так я дізнався, що це відбувалось через конфлікт імен. Виявилось, що я надав для кнопки <code>id=reset</code>, і коли викликав <code>form.reset()</code>, то браузер думав, що я хочу отримати доступ до елемента <code>&lt;buton&gt;</code> і вже в нього викликати метод <code>reset()</code>:</li>
+</ol>
+<pre class="prettyprint source lang-html"><code>&lt;button type=&quot;reset&quot; class=&quot;reset disabled&quot; id=&quot;resetButton&quot; disabled>Reset&lt;/button>
+
+
+Також варто було б додати логіку для обмеження максимальних сум і відсотків.
+</code></pre></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#bill">bill</a></li><li><a href="global.html#calculate">calculate</a></li><li><a href="global.html#clearErrors">clearErrors</a></li><li><a href="global.html#clearForm">clearForm</a></li><li><a href="global.html#customTip">customTip</a></li><li><a href="global.html#decimalInput">decimalInput</a></li><li><a href="global.html#displayTipPerPerson">displayTipPerPerson</a></li><li><a href="global.html#displayTotalPerPerson">displayTotalPerPerson</a></li><li><a href="global.html#errors">errors</a></li><li><a href="global.html#form">form</a></li><li><a href="global.html#getTipPercent">getTipPercent</a></li><li><a href="global.html#integerInput">integerInput</a></li><li><a href="global.html#numberOfPeople">numberOfPeople</a></li><li><a href="global.html#process">process</a></li><li><a href="global.html#removeClassActive">removeClassActive</a></li><li><a href="global.html#resetButton">resetButton</a></li><li><a href="global.html#showErrorMessage">showErrorMessage</a></li><li><a href="global.html#showNumbers">showNumbers</a></li><li><a href="global.html#tipButtons">tipButtons</a></li><li><a href="global.html#validationNonZero">validationNonZero</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Thu Jul 31 2025 15:40:14 GMT+0300 (за східноєвропейським літнім часом)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
