@@ -21,8 +21,8 @@
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [GitHub](https://github.com/slavon213/tip-calculator)
+- Live Site URL: [GitHub Pages](https://slavon213.github.io/tip-calculator/)
 
 ## My process
 
