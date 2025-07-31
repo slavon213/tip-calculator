@@ -100,17 +100,17 @@ function showErrorMessage(element, message = "") {
 }
 
 bill.addEventListener("input", function () {
-    this.value = decimalInput(this.value);
+    this.value = decimalInput(this.value).substring(0,7);
     process();
 });
 
 customTip.addEventListener("input", function () {
-    this.value = decimalInput(this.value);
+    this.value = decimalInput(this.value).substring(0,3);
     process();
 });
 
 numberOfPeople.addEventListener("input", function () {
-    this.value = integerInput(this.value);
+    this.value = integerInput(this.value).substring(0,3);
     process();
 });
 
