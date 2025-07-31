@@ -17,7 +17,7 @@
 
 ### Screenshot
 
-![](./design/desktop-design-completed.jpg)
+![](../design/desktop-design-completed.jpg)
 
 ### Links
 
@@ -60,7 +60,7 @@ element.setCustomValidity("Can't be zero");
 
 3. При виконанні роботи потрібно було очищати поля вводу форми. Це можна зробити стандартним методом форми `form.reset()`. Але несподівано виникла помилка, яка призводила до того, що форма не очищалась. В консолі відображалась помилка `form.reset() s not a function`. Так я дізнався, що це відбувалось через конфлікт імен. Виявилось, що я надав для кнопки `id=reset`, і коли викликав `form.reset()`, то браузер думав, що я хочу отримати доступ до елемента `<buton>` і вже в нього викликати метод `reset()`:
 ```html
-<button type="reset" class="reset disabled" id="resetButton" disabled>Reset</button>
+<button type="reset" class="reset disabled" id="reset" disabled>Reset</button>
 
 
 Також варто було б додати логіку для обмеження максимальних сум і відсотків.
