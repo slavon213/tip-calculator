@@ -2,10 +2,11 @@ const form = document.getElementById("form");
 const bill = document.getElementById("bill");
 const customTip = document.getElementById("custom-tip");
 const numberOfPeople = document.getElementById("people-number");
-const resetButton = document.getElementById("reset");
+const resetButton = document.getElementById("resetButton");
 const tipButtons = document.querySelectorAll(".tip-amount");
 const displayTipPerPerson = document.querySelector("#tip-amount > span");
 const displayTotalPerPerson = document.querySelector("#total-bill > span");
+const errors = document.querySelectorAll("small");
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -13,8 +14,9 @@ form.addEventListener("submit", (e) => {
 });
 
 resetButton.addEventListener("click", function () {
-    showNumbers();
+    clearForm();
     this.classList.add("disabled");
+    this.disabled = true;
 });
 
 function process() {
@@ -22,6 +24,7 @@ function process() {
     const numberPeopleIsValid = validationNonZero(numberOfPeople);
 
     if (billIsValid && numberPeopleIsValid) {
+        resetButton.disabled = false;
         const [tipPerPerson, totalPerPerson] = calculate();
         showNumbers(tipPerPerson, totalPerPerson);
         resetButton.classList.remove("disabled");
@@ -31,6 +34,20 @@ function process() {
 function showNumbers(tip = "0.00", total = "0.00") {
     displayTipPerPerson.textContent = tip;
     displayTotalPerPerson.textContent = total;
+}
+
+function clearErrors() {
+    errors.forEach((error) => {
+        error.textContent = "";
+    });
+}
+
+function clearForm() {
+    showNumbers();
+    clearErrors();
+    bill.setCustomValidity("");
+    numberOfPeople.setCustomValidity("");
+    form.reset();
 }
 
 function removeClassActive(listButtons) {
@@ -91,7 +108,7 @@ function validationNonZero(element) {
         return;
     }
     showErrorMessage(errorElement);
-        element.setCustomValidity("");
+    element.setCustomValidity("");
     return true;
 }
 
@@ -100,17 +117,17 @@ function showErrorMessage(element, message = "") {
 }
 
 bill.addEventListener("input", function () {
-    this.value = decimalInput(this.value).substring(0,7);
+    this.value = decimalInput(this.value).substring(0, 7);
     process();
 });
 
 customTip.addEventListener("input", function () {
-    this.value = decimalInput(this.value).substring(0,3);
+    this.value = integerInput(this.value).substring(0, 3);
     process();
 });
 
 numberOfPeople.addEventListener("input", function () {
-    this.value = integerInput(this.value).substring(0,3);
+    this.value = integerInput(this.value).substring(0, 3);
     process();
 });
 
