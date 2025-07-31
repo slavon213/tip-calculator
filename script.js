@@ -86,10 +86,12 @@ function validationNonZero(element) {
     const errorElement = parentElement.querySelector("small");
 
     if (isNaN(value) || value <= 0) {
-        showErrorMessage(errorElement, "Can't be zero2");
+        showErrorMessage(errorElement, "Can't be zero");
+        element.setCustomValidity("Can't be zero");
         return;
     }
     showErrorMessage(errorElement);
+        element.setCustomValidity("");
     return true;
 }
 

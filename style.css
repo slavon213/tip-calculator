@@ -136,7 +136,6 @@ form {
     align-items: flex-start;
 }
 
-
 .flx {
     display: flex;
     justify-content: space-between;
@@ -207,11 +206,12 @@ small {
         top: 50%;
         transform: translateY(-50%);
     }
-
-    &:invalid {
-        border-color: var(--color-invalid);
-    }
 }
+
+input:invalid {
+    border-color: var(--color-invalid);
+}
+
 .dollar::before {
     background-image: url("./images/icon-dollar.svg");
 }
